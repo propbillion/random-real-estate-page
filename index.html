@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EstateGrid - Premium Real Estate Projects</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#151b24; --card:#1a2230; --line:#263044;
+    --text:#e8edf5; --muted:#8a97ab; --gold:#d4a853; --gold2:#f0cf8a;
+    --green:#3fb68b; --blue:#4c8dff; --orange:#ff9f43; --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;cursor:pointer}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:1280px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+  .logo{font-weight:800;font-size:22px;letter-spacing:.5px}
+  .logo span{color:var(--gold)}
+  .nav-links{display:flex;gap:24px;font-size:14px;color:var(--muted)}
+  .nav-links a:hover{color:var(--gold)}
+  .shortlist-btn{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:8px 16px;border-radius:30px;font-size:14px}
+  .shortlist-btn b{background:var(--gold);color:#111;border-radius:20px;padding:0 7px;margin-left:6px;font-size:12px}
+
+  /* HERO */
+  .hero{position:relative;padding:80px 20px 110px;text-align:center;overflow:hidden;
+    background:radial-gradient(ellipse at top,#2a2416 0%,transparent 60%),linear-gradient(180deg,#121823,#0d1117)}
+  .hero svg.skyline{position:absolute;bottom:0;left:0;width:100%;height:140px;opacity:.25}
+  .hero h1{font-size:clamp(30px,5vw,54px);font-weight:800;line-height:1.15;max-width:850px;margin:auto}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--gold),var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{color:var(--muted);margin:16px auto 0;max-width:620px;font-size:17px}
+  .stats{display:flex;justify-content:center;gap:40px;margin-top:36px;flex-wrap:wrap}
+  .stats div{text-align:center}
+  .stats b{display:block;font-size:28px;color:var(--gold)}
+  .stats span{font-size:13px;color:var(--muted)}
+
+  /* FILTER BAR */
+  .filters{max-width:1240px;margin:-60px auto 0;position:relative;z-index:5;background:var(--panel);border:1px solid var(--line);
+    border-radius:18px;padding:20px;display:grid;grid-template-columns:2fr repeat(5,1fr);gap:12px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+  .filters label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:5px}
+  .filters input,.filters select{width:100%;background:var(--bg);border:1px solid var(--line);color:var(--text);padding:11px 12px;border-radius:10px;font-size:14px;outline:none}
+  .filters input:focus,.filters select:focus{border-color:var(--gold)}
+
+  /* TOOLBAR */
+  main{max-width:1280px;margin:auto;padding:36px 20px 60px}
+  .toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;margin-bottom:22px}
+  .toolbar h2{font-size:22px}
+  .toolbar h2 small{color:var(--muted);font-weight:400;font-size:15px;margin-left:6px}
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{background:var(--card);border:1px solid var(--line);color:var(--muted);padding:7px 14px;border-radius:30px;font-size:13px}
+  .chip.active{background:var(--gold);color:#111;border-color:var(--gold);font-weight:600}
+
+  /* GRID */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.25s;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-4px);border-color:#3a4760;box-shadow:0 16px 40px rgba(0,0,0,.35)}
+  .thumb{height:190px;position:relative;overflow:hidden}
+  .thumb svg{width:100%;height:100%;display:block}
+  .badge{position:absolute;top:12px;left:12px;font-size:11px;font-weight:700;padding:5px 10px;border-radius:6px;text-transform:uppercase;letter-spacing:.5px}
+  .b-new{background:var(--blue)} .b-uc{background:var(--orange);color:#111} .b-rtm{background:var(--green);color:#062}
+  .heart{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;border:none;background:rgba(0,0,0,.5);color:#fff;font-size:18px}
+  .heart.on{color:#ff4d6d}
+  .offer{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.8));padding:22px 14px 10px;font-size:12px;color:var(--gold2)}
+  .body{padding:16px 18px 18px;flex:1;display:flex;flex-direction:column}
+  .dev{font-size:12px;color:var(--gold);text-transform:uppercase;letter-spacing:1px}
+  .name{font-size:19px;font-weight:700;margin:3px 0}
+  .loc{font-size:13px;color:var(--muted)}
+  .price{font-size:22px;font-weight:800;margin:12px 0 2px}
+  .price small{font-size:13px;color:var(--muted);font-weight:400}
+  .specs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .specs div{text-align:center}
+  .specs b{display:block;font-size:14px}
+  .specs span{font-size:11px;color:var(--muted)}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+  .tags span{font-size:11px;background:var(--bg);border:1px solid var(--line);padding:3px 8px;border-radius:5px;color:var(--muted)}
+  .actions{display:flex;gap:8px;margin-top:auto}
+  .btn{flex:1;padding:11px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--text);font-size:14px;font-weight:600}
+  .btn-gold{background:linear-gradient(90deg,var(--gold),var(--gold2));color:#111;border:none}
+  .btn:hover{filter:brightness(1.1)}
+  .empty{text-align:center;padding:80px 20px;color:var(--muted);grid-column:1/-1}
+
+  /* MODAL */
+  .overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+  .overlay.show{display:flex}
+  .modal{background:var(--panel);border:1px solid var(--line);border-radius:18px;max-width:880px;width:100%;max-height:92vh;overflow:auto;position:relative}
+  .close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:none;background:rgba(0,0,0,.6);color:#fff;font-size:20px;z-index:2}
+  .m-hero{height:260px}
+  .m-hero svg{width:100%;height:100%}
+  .m-body{padding:24px 28px 30px}
+  .m-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{padding:10px;text-align:left;border-bottom:1px solid var(--line)}
+  th{color:var(--muted);font-weight:500;font-size:12px;text-transform:uppercase}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .box h4{margin-bottom:12px;font-size:15px}
+  .range{margin:10px 0}
+  .range label{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+  .range input{width:100%;accent-color:var(--gold)}
+  .emi{font-size:28px;font-weight:800;color:var(--gold);margin-top:10px}
+  .amen{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:13px;color:var(--muted)}
+  .form input{width:100%;background:var(--bg);border:1px solid var(--line);color:var(--text);padding:11px;border-radius:10px;margin-bottom:10px}
+
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--green);color:#fff;padding:12px 22px;border-radius:30px;font-weight:600;transition:.3s;z-index:200}
+  .toast.show{transform:translateX(-50%) translateY(0)}
+
+  footer{border-top:1px solid var(--line);padding:30px 20px;text-align:center;color:var(--muted);font-size:13px}
+
+  @media(max-width:900px){
+    .filters{grid-template-columns:1fr 1fr;margin:-50px 14px 0}
+    .filters .search{grid-column:1/-1}
+    .nav-links{display:none}
+    .m-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="logo">Estate<span>Grid</span></div>
+    <div class="nav-links">
+      <a href="#projects">Projects</a><a href="#projects">New Launches</a><a href="#projects">Ready to Move</a><a href="#contact">Contact</a>
+    </div>
+    <button class="shortlist-btn" onclick="toggleShortlistView()">&#9829; Shortlist <b id="slCount">0</b></button>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Find your next <em>premium address</em> across India's top micro-markets</h1>
+  <p>Verified projects, transparent pricing, real carpet areas. Compare, shortlist and book a site visit in one place.</p>
+  <div class="stats">
+    <div><b id="stProj">0</b><span>Live Projects</span></div>
+    <div><b>4</b><span>Cities</span></div>
+    <div><b id="stDev">0</b><span>Developers</span></div>
+    <div><b>100%</b><span>RERA Registered</span></div>
+  </div>
+  <svg class="skyline" viewBox="0 0 1200 140" preserveAspectRatio="none">
+    <path fill="#d4a853" d="M0 140V90h40V60h30v30h25V40h40v100h20V70h35V30h30v110h25V80h40V50h20V20h30v120h30V60h45v80h20V45h30V10h25v130h35V70h40V40h30v100h25V85h35V55h30v85h20V30h40v110h30V65h35V25h25v115h40V75h30V50h45v90h25V35h30v105h35V60h40v80h30V45h25v95h35V70h40v70h30V40h40v100z"/>
+  </svg>
+</section>
+
+<div class="filters">
+  <div class="search"><label>Search</label><input id="fSearch" placeholder="Project, developer or locality..."></div>
+  <div><label>City</label><select id="fCity"><option value="">All Cities</option></select></div>
+  <div><label>Configuration</label><select id="fBhk"><option value="">Any BHK</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+  <div><label>Budget</label><select id="fBudget">
+    <option value="">Any Budget</option><option value="0-75">Under 75 L</option><option value="75-150">75 L - 1.5 Cr</option>
+    <option value="150-300">1.5 Cr - 3 Cr</option><option value="300-99999">3 Cr +</option></select></div>
+  <div><label>Status</label><select id="fStatus"><option value="">All</option><option>New Launch</option><option>Under Construction</option><option>Ready to Move</option></select></div>
+  <div><label>Sort By</label><select id="fSort">
+    <option value="pop">Popularity</option><option value="pa">Price: Low to High</option><option value="pd">Price: High to Low</option>
+    <option value="psf">Rate / sq.ft. (Low)</option><option value="area">Largest Area</option><option value="pos">Earliest Possession</option></select></div>
+</div>
+
+<main id="projects">
+  <div class="toolbar">
+    <h2 id="title">All Projects <small id="count"></small></h2>
+    <div class="chips" id="chips"></div>
+  </div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer id="contact">
+  &copy; 2026 EstateGrid. Demo listing website - all projects, prices and areas shown are sample data for illustration only.
+</footer>
+
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal" id="modal"></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ---------- Seeded random so data stays the same on every load ---------- */
+let seed = 42;
+const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const pick = a => a[Math.floor(rnd() * a.length)];
+const between = (a, b) => Math.floor(a + rnd() * (b - a + 1));
+
+const CITIES = {
+  "Pune":      {areas:["Kharadi","Baner","Hinjewadi","Wakad","Viman Nagar","Balewadi","Wagholi","Hadapsar","Koregaon Park","Bavdhan"], rate:[7500,16500]},
+  "Mumbai":    {areas:["Powai","Thane West","Andheri East","Goregaon","Worli","Chembur","Mulund","Kandivali"], rate:[14000,42000]},
+  "Bengaluru": {areas:["Whitefield","Sarjapur Road","Hebbal","Electronic City","Yelahanka","HSR Layout","Devanahalli"], rate:[7000,15500]},
+  "Hyderabad": {areas:["Gachibowli","Kokapet","Kondapur","Tellapur","Narsingi","Financial District"], rate:[6800,13500]}
+};
+const DEVS = ["Aurelia Developers","Skyline Habitat","Vertex Realty","Crestwood Homes","Meridian Group","Northstar Builders","Lumina Estates","Banyan Spaces","Orchid Infra","Paramount Living","Sterling Heights Co.","Zenith Constructions"];
+const N1 = ["Aria","Elysian","Serene","Grand","The Crown","Imperial","Verde","Solace","Horizon","Riviera","Altura","Opus","Celestia","Nirvana","Monarch","Azure","Trinity","Cascade"];
+const N2 = ["Residences","Towers","Heights","One","Park","Greens","Enclave","Bay","Square","Vista","Avenue","Gardens"];
+const AMEN = ["Clubhouse","Infinity Pool","Gymnasium","Jogging Track","Kids Play Area","Co-working Lounge","Mini Theatre","EV Charging","Sky Deck","Yoga Deck","Indoor Games","Pet Park","Party Lawn","24x7 Security","Tennis Court","Amphitheatre"];
+const OFFERS = ["Zero stamp duty for first 50 bookings","Pay 10% now, rest on possession","Free modular kitchen","Spot booking discount up to 3 L","No GST on select units","Assured rental for 2 years",""];
+const STATUS = ["New Launch","Under Construction","Ready to Move"];
+const PALETTES = [["#1e3a5f","#d4a853"],["#2d1b3d","#ff9f43"],["#0f3d3e","#3fb68b"],["#3b1f1f","#f0cf8a"],["#1a2a4a","#4c8dff"],["#2a2a2a","#e07a5f"],["#203a2b","#a8d5ba"]];
+
+const projects = [];
+for (let i = 0; i < 36; i++) {
+  const city = pick(Object.keys(CITIES));
+  const c = CITIES[city];
+  const status = pick(STATUS);
+  const rate = Math.round(between(c.rate[0], c.rate[1]) / 50) * 50;
+  const minB = between(1, 3), maxB = Math.min(5, minB + between(0, 2));
+  const units = [];
+  for (let b = minB; b <= maxB; b++) {
+    const base = {1:[420,560],2:[620,860],3:[980,1350],4:[1550,2100],5:[2300,3200]}[b];
+    const carpet = between(base[0], base[1]);
+    units.push({bhk:b, carpet, price: carpet * rate});
+  }
+  const year = status === "Ready to Move" ? 2026 : between(2027, 2031);
+  const month = status === "Ready to Move" ? "Ready" : pick(["Mar","Jun","Sep","Dec"]);
+  const amen = [...AMEN].sort(() => rnd() - .5).slice(0, 8);
+  projects.push({
+    id: i,
+    name: pick(N1) + " " + pick(N2),
+    dev: pick(DEVS),
+    city, area: pick(c.areas),
+    status, rate, units,
+    min: units[0].price, max: units[units.length-1].price,
+    minA: units[0].carpet, maxA: units[units.length-1].carpet,
+    acres: (between(15, 120) / 10).toFixed(1),
+    towers: between(2, 12), floors: between(14, 48),
+    total: between(180, 1400),
+    poss: month === "Ready" ? "Ready" : `${month} ${year}`,
+    possSort: month === "Ready" ? 0 : year * 12 + ["Mar","Jun","Sep","Dec"].indexOf(month) * 3,
+    amen, offer: pick(OFFERS),
+    pal: pick(PALETTES),
+    pop: between(50, 999),
+    rera: "P5" + between(1000000000, 9999999999)
+  });
+}
+
+/* ---------- Helpers ---------- */
+const inr = v => v >= 1e7 ? (v/1e7).toFixed(2).replace(/\.00$/,"") + " Cr" : (v/1e5).toFixed(0) + " L";
+const num = v => v.toLocaleString("en-IN");
+const bhkText = p => { const b = p.units.map(u => u.bhk); return b.length > 1 ? `${b[0]}-${b[b.length-1]} BHK` : `${b[0]} BHK`; };
+const badgeClass = s => s === "New Launch" ? "b-new" : s === "Ready to Move" ? "b-rtm" : "b-uc";
+let shortlist = new Set();
+try { shortlist = new Set(JSON.parse(localStorage.getItem("eg_sl") || "[]")); } catch(e) {}
+let showShortlist = false, quickChip = "";
+
+/* Building illustration per project (no external images) */
+function art(p, h = 190) {
+  const [bg, ac] = p.pal; let s = 7 + p.id * 13, r = () => (s = (s * 9301 + 49297) % 233280) / 233280;
+  let towers = "";
+  const n = Math.min(p.towers, 6), w = 400 / (n + 1);
+  for (let t = 0; t < n; t++) {
+    const th = 80 + r() * (h - 60), x = 20 + t * w + r() * 10, tw = w * .7;
+    towers += `<rect x="${x}" y="${h - th}" width="${tw}" height="${th}" fill="${bg}" stroke="${ac}" stroke-opacity=".5"/>`;
+    for (let y = h - th + 8; y < h - 10; y += 12)
+      for (let xx = x + 6; xx < x + tw - 6; xx += 10)
+        if (r() > .45) towers += `<rect x="${xx}" y="${y}" width="5" height="6" fill="${ac}" opacity="${.3 + r() * .7}"/>`;
+  }
+  return `<svg viewBox="0 0 440 ${h}" preserveAspectRatio="xMidYMid slice">
+    <defs><linearGradient id="g${p.id}${h}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${ac}" stop-opacity=".35"/><stop offset="1" stop-color="#0d1117"/></linearGradient></defs>
+    <rect width="440" height="${h}" fill="url(#g${p.id}${h})"/>
+    <circle cx="${340 - p.id * 3}" cy="45" r="22" fill="${ac}" opacity=".5"/>${towers}
+    <rect y="${h - 8}" width="440" height="8" fill="#0d1117"/></svg>`;
+}
+
+/* ---------- Render ---------- */
+function filtered() {
+  const q = fSearch.value.toLowerCase().trim();
+  const [lo, hi] = (fBudget.value || "0-99999").split("-").map(x => +x * 1e5);
+  let list = projects.filter(p =>
+    (!showShortlist || shortlist.has(p.id)) &&
+    (!q || (p.name + p.dev + p.area + p.city).toLowerCase().includes(q)) &&
+    (!fCity.value || p.city === fCity.value) &&
+    (!fBhk.value || p.units.some(u => u.bhk == fBhk.value)) &&
+    (!fStatus.value || p.status === fStatus.value) &&
+    (p.max >= lo && p.min <= hi) &&
+    (!quickChip || p.area === quickChip)
+  );
+  const s = fSort.value;
+  const by = {pop:(a,b)=>b.pop-a.pop, pa:(a,b)=>a.min-b.min, pd:(a,b)=>b.max-a.max, psf:(a,b)=>a.rate-b.rate, area:(a,b)=>b.maxA-a.maxA, pos:(a,b)=>a.possSort-b.possSort}[s];
+  return list.sort(by);
+}
+
+function render() {
+  const list = filtered();
+  count.textContent = `(${list.length} found)`;
+  title.firstChild.textContent = showShortlist ? "Your Shortlist " : "All Projects ";
+  grid.innerHTML = list.length ? list.map(p => `
+    <div class="card">
+      <div class="thumb">${art(p)}
+        <span class="badge ${badgeClass(p.status)}">${p.status}</span>
+        <button class="heart ${shortlist.has(p.id) ? "on" : ""}" onclick="toggleSL(${p.id})">&#9829;</button>
+        ${p.offer ? `<div class="offer">&#9733; ${p.offer}</div>` : ""}
+      </div>
+      <div class="body">
+        <div class="dev">${p.dev}</div>
+        <div class="name">${p.name}</div>
+        <div class="loc">&#128205; ${p.area}, ${p.city}</div>
+        <div class="price">&#8377; ${inr(p.min)}${p.max > p.min ? " - " + inr(p.max) : ""} <small>onwards</small></div>
+        <div class="loc">&#8377; ${num(p.rate)} / sq.ft. (carpet)</div>
+        <div class="specs">
+          <div><b>${bhkText(p)}</b><span>Config</span></div>
+          <div><b>${num(p.minA)}${p.maxA > p.minA ? "-" + num(p.maxA) : ""}</b><span>Carpet sq.ft.</span></div>
+          <div><b>${p.poss}</b><span>Possession</span></div>
+        </div>
+        <div class="tags">${p.amen.slice(0,4).map(a => `<span>${a}</span>`).join("")}<span>+${p.amen.length - 4} more</span></div>
+        <div class="actions">
+          <button class="btn" onclick="openModal(${p.id})">View Details</button>
+          <button class="btn btn-gold" onclick="openModal(${p.id}, true)">Enquire</button>
+        </div>
+      </div>
+    </div>`).join("")
+  : `<div class="empty"><h3>No projects match these filters</h3><p>Try widening budget or clearing filters.</p></div>`;
+}
+
+function renderChips() {
+  const top = {}; projects.forEach(p => top[p.area] = (top[p.area] || 0) + 1);
+  const areas = Object.entries(top).sort((a,b) => b[1]-a[1]).slice(0, 6).map(x => x[0]);
+  chips.innerHTML = [`<button class="chip ${!quickChip ? "active" : ""}" onclick="setChip('')">All</button>`]
+    .concat(areas.map(a => `<button class="chip ${quickChip === a ? "active" : ""}" onclick="setChip('${a}')">${a}</button>`)).join("");
+}
+function setChip(a) { quickChip = a; renderChips(); render(); }
+
+function toggleSL(id) {
+  shortlist.has(id) ? shortlist.delete(id) : shortlist.add(id);
+  try { localStorage.setItem("eg_sl", JSON.stringify([...shortlist])); } catch(e) {}
+  slCount.textContent = shortlist.size; render();
+}
+function toggleShortlistView() { showShortlist = !showShortlist; render(); projectsEl.scrollIntoView({behavior:"smooth"}); }
+
+/* ---------- Modal ---------- */
+let cur = null;
+function openModal(id, focusForm) {
+  const p = cur = projects[id];
+  modal.innerHTML = `
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div class="m-hero">${art(p, 260)}</div>
+    <div class="m-body">
+      <div class="dev">${p.dev} &middot; RERA ${p.rera}</div>
+      <h2 style="font-size:28px">${p.name}</h2>
+      <div class="loc">&#128205; ${p.area}, ${p.city} &nbsp;|&nbsp; ${p.acres} acres &middot; ${p.towers} towers &middot; G+${p.floors} &middot; ${num(p.total)} units</div>
+      <div class="price">&#8377; ${inr(p.min)} - ${inr(p.max)} <small>&middot; ${p.status} &middot; Possession: ${p.poss}</small></div>
+
+      <div class="box" style="margin-top:18px">
+        <h4>Unit Configuration & Pricing</h4>
+        <table><tr><th>Type</th><th>Carpet Area</th><th>Rate / sq.ft.</th><th>All-in Price*</th></tr>
+        ${p.units.map(u => `<tr><td><b>${u.bhk} BHK</b></td><td>${num(u.carpet)} sq.ft.</td><td>&#8377; ${num(p.rate)}</td><td><b style="color:var(--gold)">&#8377; ${inr(u.price)}</b></td></tr>`).join("")}
+        </table>
+        <p style="font-size:11px;color:var(--muted);margin-top:8px">*Indicative price, excludes stamp duty, registration and GST.</p>
+      </div>
+
+      <div class="m-grid">
+        <div class="box">
+          <h4>EMI Calculator</h4>
+          <div class="range"><label>Property Price <b id="ePv"></b></label><input type="range" id="eP" min="${p.min}" max="${p.max * 1.2}" step="100000" value="${p.min}"></div>
+          <div class="range"><label>Down Payment <b id="eDv"></b></label><input type="range" id="eD" min="10" max="50" value="20"></div>
+          <div class="range"><label>Interest Rate <b id="eRv"></b></label><input type="range" id="eR" min="7" max="11" step="0.05" value="8.5"></div>
+          <div class="range"><label>Tenure <b id="eTv"></b></label><input type="range" id="eT" min="5" max="30" value="20"></div>
+          <div style="font-size:13px;color:var(--muted)">Monthly EMI</div>
+          <div class="emi" id="emi"></div>
+        </div>
+        <div>
+          <div class="box" style="margin-bottom:16px"><h4>Amenities</h4>
+            <div class="amen">${p.amen.map(a => `<div>&#10003; ${a}</div>`).join("")}</div>
+          </div>
+          <div class="box form" id="enqBox"><h4>Book a Site Visit</h4>
+            <input id="nName" placeholder="Full name"><input id="nPhone" placeholder="Mobile number" maxlength="10">
+            <button class="btn btn-gold" style="width:100%" onclick="submitLead()">Get Price Sheet & Callback</button>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  overlay.classList.add("show");
+  document.body.style.overflow = "hidden";
+  ["eP","eD","eR","eT"].forEach(id => document.getElementById(id).oninput = calcEmi);
+  calcEmi();
+  if (focusForm) setTimeout(() => { enqBox.scrollIntoView({behavior:"smooth"}); nName.focus(); }, 150);
+}
+function calcEmi() {
+  const P = +eP.value, d = +eD.value, r = +eR.value / 1200, n = +eT.value * 12;
+  const L = P * (1 - d / 100), e = L * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+  ePv.textContent = "₹ " + inr(P); eDv.textContent = d + "%"; eRv.textContent = (+eR.value).toFixed(2) + "%"; eTv.textContent = eT.value + " yrs";
+  emi.textContent = "₹ " + num(Math.round(e));
+}
+function closeModal() { overlay.classList.remove("show"); document.body.style.overflow = ""; }
+function submitLead() {
+  if (!nName.value.trim() || !/^[6-9]\d{9}$/.test(nPhone.value)) return toast("Enter a valid name and 10-digit mobile", "#e05555");
+  closeModal(); toast(`Thanks ${nName.value.split(" ")[0]}! We'll call you about ${cur.name}.`);
+}
+function toast(msg, color) {
+  const t = document.getElementById("toast"); t.textContent = msg; t.style.background = color || "var(--green)";
+  t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 3000);
+}
+
+/* ---------- Init ---------- */
+const projectsEl = document.getElementById("projects");
+Object.keys(CITIES).forEach(c => fCity.innerHTML += `<option>${c}</option>`);
+[fSearch, fCity, fBhk, fBudget, fStatus, fSort].forEach(el => el.addEventListener("input", render));
+document.addEventListener("keydown", e => e.key === "Escape" && closeModal());
+stProj.textContent = projects.length;
+stDev.textContent = new Set(projects.map(p => p.dev)).size;
+slCount.textContent = shortlist.size;
+renderChips(); render();
+</script>
+</body>
+</html>
