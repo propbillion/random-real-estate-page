@@ -3,398 +3,600 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EstateGrid - Premium Real Estate Projects</title>
+<title>Godrej Emerald Waters Pimpri | 1, 2, 3 & 4 BHK Homes near Sant Tukaram Metro</title>
+<meta name="description" content="Godrej Emerald Waters, Pimpri - 1, 2, 3 & 4 BHK premium homes on 7.3 acres next to Sant Tukaram Metro Station. 2 BHK from 1.49 Cr. RERA possession Feb 2029. Get brochure & cost sheet.">
 <style>
   :root{
-    --bg:#0d1117; --panel:#151b24; --card:#1a2230; --line:#263044;
-    --text:#e8edf5; --muted:#8a97ab; --gold:#d4a853; --gold2:#f0cf8a;
-    --green:#3fb68b; --blue:#4c8dff; --orange:#ff9f43; --radius:14px;
+    --bg:#06110d; --panel:#0b1c16; --card:#0f241c; --line:#1d3a2f;
+    --text:#ecf4ef; --muted:#93aa9f; --em:#1fa37a; --em2:#5fe0b0;
+    --gold:#d8b25e; --gold2:#f3d897; --wa:#25d366; --blue:#3d8bff; --r:14px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+  html{scroll-behavior:smooth}
+  body{font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
   a{color:inherit;text-decoration:none}
   button{font:inherit;cursor:pointer}
+  .wrap{max-width:1200px;margin:auto;padding:0 20px}
+  section{padding:64px 0}
+  .eyebrow{color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+  h2.t{font-size:clamp(24px,3.4vw,36px);margin:6px 0 10px;line-height:1.2}
+  .sub{color:var(--muted);max-width:680px}
 
-  /* NAV */
-  nav{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .nav-in{max-width:1280px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
-  .logo{font-weight:800;font-size:22px;letter-spacing:.5px}
-  .logo span{color:var(--gold)}
-  .nav-links{display:flex;gap:24px;font-size:14px;color:var(--muted)}
-  .nav-links a:hover{color:var(--gold)}
-  .shortlist-btn{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:8px 16px;border-radius:30px;font-size:14px}
-  .shortlist-btn b{background:var(--gold);color:#111;border-radius:20px;padding:0 7px;margin-left:6px;font-size:12px}
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:12px 18px;border-radius:10px;border:1px solid var(--line);
+    background:transparent;color:var(--text);font-weight:600;font-size:14px;transition:.15s;cursor:pointer;text-align:center;line-height:1.2}
+  .btn:hover{filter:brightness(1.12);transform:translateY(-1px)}
+  .btn-gold{background:linear-gradient(90deg,var(--gold),var(--gold2));color:#1b1404;border:none}
+  .btn-em{background:linear-gradient(90deg,var(--em),#18c08c);color:#03241a;border:none}
+  .btn-wa{background:var(--wa);color:#04340f;border:none}
+  .btn-call{background:var(--blue);color:#fff;border:none}
+  .btn-ghost{background:#0a1a14}
+  .btn-sm{padding:9px 12px;font-size:13px}
+  .btn-block{width:100%}
 
-  /* HERO */
-  .hero{position:relative;padding:80px 20px 110px;text-align:center;overflow:hidden;
-    background:radial-gradient(ellipse at top,#2a2416 0%,transparent 60%),linear-gradient(180deg,#121823,#0d1117)}
-  .hero svg.skyline{position:absolute;bottom:0;left:0;width:100%;height:140px;opacity:.25}
-  .hero h1{font-size:clamp(30px,5vw,54px);font-weight:800;line-height:1.15;max-width:850px;margin:auto}
-  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--gold),var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .hero p{color:var(--muted);margin:16px auto 0;max-width:620px;font-size:17px}
-  .stats{display:flex;justify-content:center;gap:40px;margin-top:36px;flex-wrap:wrap}
-  .stats div{text-align:center}
-  .stats b{display:block;font-size:28px;color:var(--gold)}
-  .stats span{font-size:13px;color:var(--muted)}
+  /* nav */
+  nav{position:sticky;top:0;z-index:60;background:rgba(6,17,13,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;max-width:1200px;margin:auto;gap:10px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .gem{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--em2),#0b5e45);display:grid;place-items:center}
+  .gem svg{width:22px;height:22px}
+  .brand b{font-size:18px;letter-spacing:.3px;display:block;line-height:1.1}
+  .brand small{font-size:10.5px;color:var(--gold);letter-spacing:2px;text-transform:uppercase}
+  .links{display:flex;gap:22px;font-size:14px;color:var(--muted)}
+  .links a:hover{color:var(--em2)}
+  .nav-r{display:flex;gap:8px}
+  .nav-r .btn{padding:8px 14px;border-radius:30px;font-size:13px}
 
-  /* FILTER BAR */
-  .filters{max-width:1240px;margin:-60px auto 0;position:relative;z-index:5;background:var(--panel);border:1px solid var(--line);
-    border-radius:18px;padding:20px;display:grid;grid-template-columns:2fr repeat(5,1fr);gap:12px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
-  .filters label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:5px}
-  .filters input,.filters select{width:100%;background:var(--bg);border:1px solid var(--line);color:var(--text);padding:11px 12px;border-radius:10px;font-size:14px;outline:none}
-  .filters input:focus,.filters select:focus{border-color:var(--gold)}
+  /* hero */
+  .hero{position:relative;overflow:hidden;padding:56px 0 70px;
+    background:radial-gradient(ellipse at 20% 0%,rgba(31,163,122,.28),transparent 55%),radial-gradient(ellipse at 90% 30%,rgba(216,178,94,.14),transparent 50%),var(--bg)}
+  .hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center}
+  .tag{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--em);color:var(--em2);padding:6px 14px;border-radius:30px;font-size:12.5px;margin-bottom:16px}
+  .hero h1{font-size:clamp(32px,5vw,56px);line-height:1.08;font-weight:800}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--em2),var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{color:var(--muted);font-size:17px;margin:16px 0 22px;max-width:560px}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+  .facts span{background:var(--card);border:1px solid var(--line);padding:8px 13px;border-radius:9px;font-size:13.5px}
+  .facts b{color:var(--gold2)}
+  .hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+  .hero-art{position:absolute;right:0;bottom:0;width:55%;height:220px;opacity:.18;pointer-events:none}
 
-  /* TOOLBAR */
-  main{max-width:1280px;margin:auto;padding:36px 20px 60px}
-  .toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;margin-bottom:22px}
-  .toolbar h2{font-size:22px}
-  .toolbar h2 small{color:var(--muted);font-weight:400;font-size:15px;margin-left:6px}
-  .chips{display:flex;gap:8px;flex-wrap:wrap}
-  .chip{background:var(--card);border:1px solid var(--line);color:var(--muted);padding:7px 14px;border-radius:30px;font-size:13px}
-  .chip.active{background:var(--gold);color:#111;border-color:var(--gold);font-weight:600}
+  .form-card{background:linear-gradient(180deg,#0f2a20,#0b1c16);border:1px solid #2a5444;border-radius:18px;padding:24px;box-shadow:0 30px 60px rgba(0,0,0,.45);position:relative}
+  .form-card h3{font-size:21px}
+  .form-card p{color:var(--muted);font-size:13.5px;margin:4px 0 16px}
+  .ribbon{position:absolute;top:-12px;right:18px;background:var(--gold);color:#1b1404;font-size:11.5px;font-weight:800;padding:5px 12px;border-radius:6px;text-transform:uppercase;letter-spacing:.5px}
+  .field{width:100%;background:#07140f;border:1px solid var(--line);color:var(--text);padding:12px 13px;border-radius:10px;font-size:14.5px;margin-bottom:10px;outline:none}
+  .field:focus{border-color:var(--em)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .tiny{font-size:11px;color:var(--muted);margin-top:10px;text-align:center}
 
-  /* GRID */
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.25s;display:flex;flex-direction:column}
-  .card:hover{transform:translateY(-4px);border-color:#3a4760;box-shadow:0 16px 40px rgba(0,0,0,.35)}
-  .thumb{height:190px;position:relative;overflow:hidden}
-  .thumb svg{width:100%;height:100%;display:block}
-  .badge{position:absolute;top:12px;left:12px;font-size:11px;font-weight:700;padding:5px 10px;border-radius:6px;text-transform:uppercase;letter-spacing:.5px}
-  .b-new{background:var(--blue)} .b-uc{background:var(--orange);color:#111} .b-rtm{background:var(--green);color:#062}
-  .heart{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;border:none;background:rgba(0,0,0,.5);color:#fff;font-size:18px}
-  .heart.on{color:#ff4d6d}
-  .offer{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.8));padding:22px 14px 10px;font-size:12px;color:var(--gold2)}
-  .body{padding:16px 18px 18px;flex:1;display:flex;flex-direction:column}
-  .dev{font-size:12px;color:var(--gold);text-transform:uppercase;letter-spacing:1px}
-  .name{font-size:19px;font-weight:700;margin:3px 0}
-  .loc{font-size:13px;color:var(--muted)}
-  .price{font-size:22px;font-weight:800;margin:12px 0 2px}
-  .price small{font-size:13px;color:var(--muted);font-weight:400}
-  .specs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .specs div{text-align:center}
-  .specs b{display:block;font-size:14px}
-  .specs span{font-size:11px;color:var(--muted)}
-  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
-  .tags span{font-size:11px;background:var(--bg);border:1px solid var(--line);padding:3px 8px;border-radius:5px;color:var(--muted)}
-  .actions{display:flex;gap:8px;margin-top:auto}
-  .btn{flex:1;padding:11px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--text);font-size:14px;font-weight:600}
-  .btn-gold{background:linear-gradient(90deg,var(--gold),var(--gold2));color:#111;border:none}
-  .btn:hover{filter:brightness(1.1)}
-  .empty{text-align:center;padding:80px 20px;color:var(--muted);grid-column:1/-1}
+  /* strip */
+  .strip{background:linear-gradient(90deg,#14382c,#0f241c,#2b2410);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .strip-in{display:grid;grid-template-columns:repeat(5,1fr);text-align:center;padding:22px 0}
+  .strip b{display:block;font-size:24px;color:var(--gold2)}
+  .strip span{font-size:12.5px;color:var(--muted)}
 
-  /* MODAL */
-  .overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+  /* price cards */
+  .prices{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px}
+  .pc{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;position:relative}
+  .pc.hot{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
+  .pc .hotb{position:absolute;top:-11px;left:18px;background:var(--gold);color:#1b1404;font-size:11px;font-weight:800;padding:3px 10px;border-radius:5px}
+  .pc h3{font-size:24px}
+  .pc .area{color:var(--muted);font-size:14px}
+  .pc .amt{font-size:28px;font-weight:800;color:var(--em2);margin:12px 0 2px}
+  .pc .amt small{font-size:13px;color:var(--muted);font-weight:400}
+  .pc ul{list-style:none;font-size:13px;color:var(--muted);margin:10px 0 16px;display:grid;gap:5px}
+  .pc .acts{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:auto}
+  .pc .acts .full{grid-column:1/-1}
+  .jodi{margin-top:18px;background:#0f241c;border:1px dashed var(--gold);border-radius:12px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+
+  /* overview */
+  .ov{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .ov-art{border-radius:18px;overflow:hidden;border:1px solid var(--line);height:360px;background:#0b1c16}
+  .ov-art svg{width:100%;height:100%;display:block}
+  .ov ul{list-style:none;display:grid;gap:10px;margin:18px 0 22px}
+  .ov li{display:flex;gap:10px;color:#cfe0d7}
+  .ov li:before{content:"\2726";color:var(--gold)}
+
+  /* amenities */
+  .amen{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+  .am{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;text-align:center}
+  .am i{font-style:normal;font-size:28px;display:block;margin-bottom:6px}
+  .am b{font-size:14px}
+
+  /* location */
+  .loc-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:28px;margin-top:28px}
+  .dist{display:grid;gap:10px}
+  .dist div{display:flex;justify-content:space-between;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:13px 16px;font-size:14.5px}
+  .dist span{color:var(--gold2);font-weight:600}
+  .map{border-radius:14px;overflow:hidden;border:1px solid var(--line);min-height:330px;background:#0b1c16}
+  .map iframe{width:100%;height:100%;min-height:330px;border:0;filter:grayscale(.3) contrast(1.05)}
+
+  /* floor plans */
+  .fp{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+  .fpc{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .fpc .img{height:170px;position:relative;display:grid;place-items:center;background:#0a1813}
+  .fpc .img svg{width:80%;height:80%;filter:blur(3px);opacity:.6}
+  .fpc .lock{position:absolute;inset:0;display:grid;place-items:center}
+  .fpc .lock .btn{padding:8px 14px;font-size:12.5px}
+  .fpc .meta{padding:12px 14px;display:flex;justify-content:space-between;font-size:14px}
+  .fpc .meta span{color:var(--muted)}
+
+  /* downloads */
+  .dl{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+  .dl a{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;align-items:center;gap:12px;transition:.15s}
+  .dl a:hover{border-color:var(--em);transform:translateY(-2px)}
+  .dl i{font-style:normal;font-size:22px;width:42px;height:42px;border-radius:10px;background:#12352a;display:grid;place-items:center;flex:none}
+  .dl b{font-size:14px;display:block}
+  .dl small{font-size:11.5px;color:var(--muted)}
+
+  /* emi */
+  .emi-box{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .range{margin:12px 0}
+  .range label{display:flex;justify-content:space-between;font-size:14px;color:var(--muted)}
+  .range input{width:100%;accent-color:var(--em)}
+  .emi-out{background:#0a1a14;border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+  .emi-out .big{font-size:36px;font-weight:800;color:var(--em2)}
+  .chipsel{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+  .chipsel button{background:#0a1a14;border:1px solid var(--line);color:var(--muted);padding:7px 13px;border-radius:30px;font-size:13px}
+  .chipsel button.on{background:var(--em);color:#03241a;border-color:var(--em);font-weight:700}
+
+  /* faq */
+  .faq{margin-top:24px;display:grid;gap:10px}
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between}
+  summary:after{content:"+";color:var(--gold);font-size:20px;line-height:1}
+  details[open] summary:after{content:"-"}
+  details p{color:var(--muted);margin-top:10px;font-size:14.5px}
+
+  .final{text-align:center;background:radial-gradient(ellipse at center,rgba(31,163,122,.25),transparent 65%);border-top:1px solid var(--line)}
+  .final .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+
+  footer{background:#040b08;border-top:1px solid var(--line);padding:34px 0 40px}
+  .f-top{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:18px}
+  .f-top p{color:var(--muted);font-size:13.5px}
+  .disc{font-size:11px;color:#62766c;line-height:1.7;border-top:1px solid var(--line);padding-top:14px}
+
+  /* modal + floating */
+  .overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);display:none;align-items:center;justify-content:center;z-index:100;padding:16px}
   .overlay.show{display:flex}
-  .modal{background:var(--panel);border:1px solid var(--line);border-radius:18px;max-width:880px;width:100%;max-height:92vh;overflow:auto;position:relative}
-  .close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:none;background:rgba(0,0,0,.6);color:#fff;font-size:20px;z-index:2}
-  .m-hero{height:260px}
-  .m-hero svg{width:100%;height:100%}
-  .m-body{padding:24px 28px 30px}
-  .m-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}
-  table{width:100%;border-collapse:collapse;font-size:14px}
-  th,td{padding:10px;text-align:left;border-bottom:1px solid var(--line)}
-  th{color:var(--muted);font-weight:500;font-size:12px;text-transform:uppercase}
-  .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
-  .box h4{margin-bottom:12px;font-size:15px}
-  .range{margin:10px 0}
-  .range label{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
-  .range input{width:100%;accent-color:var(--gold)}
-  .emi{font-size:28px;font-weight:800;color:var(--gold);margin-top:10px}
-  .amen{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:13px;color:var(--muted)}
-  .form input{width:100%;background:var(--bg);border:1px solid var(--line);color:var(--text);padding:11px;border-radius:10px;margin-bottom:10px}
-
-  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--green);color:#fff;padding:12px 22px;border-radius:30px;font-weight:600;transition:.3s;z-index:200}
+  .modal{background:var(--panel);border:1px solid #2a5444;border-radius:18px;max-width:420px;width:100%;padding:26px;position:relative}
+  .modal h3{font-size:21px;margin-bottom:4px}
+  .modal p{color:var(--muted);font-size:13.5px;margin-bottom:14px}
+  .x{position:absolute;top:10px;right:12px;background:none;border:none;color:var(--muted);font-size:24px}
+  .fab{position:fixed;right:18px;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.5);z-index:90;transition:.2s}
+  .fab:hover{transform:scale(1.08)}
+  .fab svg{width:28px;height:28px;fill:#fff}
+  .fab-wa{bottom:22px;background:var(--wa)}
+  .fab-call{bottom:90px;background:var(--blue)}
+  .mbar{display:none}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120px);padding:12px 22px;border-radius:30px;font-weight:700;transition:.3s;z-index:200;background:var(--wa);color:#04340f}
   .toast.show{transform:translateX(-50%) translateY(0)}
 
-  footer{border-top:1px solid var(--line);padding:30px 20px;text-align:center;color:var(--muted);font-size:13px}
-
-  @media(max-width:900px){
-    .filters{grid-template-columns:1fr 1fr;margin:-50px 14px 0}
-    .filters .search{grid-column:1/-1}
-    .nav-links{display:none}
-    .m-grid{grid-template-columns:1fr}
+  @media(max-width:980px){
+    .hero-grid,.ov,.loc-grid,.emi-box{grid-template-columns:1fr}
+    .prices,.fp,.dl{grid-template-columns:1fr 1fr}
+    .amen{grid-template-columns:repeat(3,1fr)}
+    .strip-in{grid-template-columns:repeat(3,1fr);row-gap:16px}
+    .links{display:none}
+    .nav-r .hide-m{display:none}
+  }
+  @media(max-width:600px){
+    section{padding:46px 0}
+    .prices,.fp,.dl{grid-template-columns:1fr}
+    .amen{grid-template-columns:1fr 1fr}
+    .strip-in{grid-template-columns:1fr 1fr}
+    .fab{display:none}
+    .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:95}
+    .mbar a{padding:15px;text-align:center;font-weight:700}
+    body{padding-bottom:52px}
+    .ov-art{height:240px}
   }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <div class="nav-in">
-    <div class="logo">Estate<span>Grid</span></div>
-    <div class="nav-links">
-      <a href="#projects">Projects</a><a href="#projects">New Launches</a><a href="#projects">Ready to Move</a><a href="#contact">Contact</a>
+    <a class="brand" href="#home">
+      <div class="gem"><svg viewBox="0 0 24 24" fill="#03241a"><path d="M6 3h12l4 6-10 12L2 9z"/></svg></div>
+      <div><b>Godrej Emerald Waters</b><small>Pimpri &middot; Pune</small></div>
+    </a>
+    <div class="links">
+      <a href="#price">Price</a><a href="#overview">Overview</a><a href="#amenities">Amenities</a><a href="#location">Location</a><a href="#plans">Floor Plans</a><a href="#faq">FAQ</a>
     </div>
-    <button class="shortlist-btn" onclick="toggleShortlistView()">&#9829; Shortlist <b id="slCount">0</b></button>
+    <div class="nav-r">
+      <a class="btn btn-call" href="tel:+918857090799">&#128222; <span class="hide-m">Call Now</span></a>
+      <a class="btn btn-wa" href="#" onclick="return wa('I am interested in Godrej Emerald Waters, Pimpri. Please share details.')">WhatsApp</a>
+    </div>
   </div>
 </nav>
 
-<section class="hero">
-  <h1>Find your next <em>premium address</em> across India's top micro-markets</h1>
-  <p>Verified projects, transparent pricing, real carpet areas. Compare, shortlist and book a site visit in one place.</p>
-  <div class="stats">
-    <div><b id="stProj">0</b><span>Live Projects</span></div>
-    <div><b>4</b><span>Cities</span></div>
-    <div><b id="stDev">0</b><span>Developers</span></div>
-    <div><b>100%</b><span>RERA Registered</span></div>
-  </div>
-  <svg class="skyline" viewBox="0 0 1200 140" preserveAspectRatio="none">
-    <path fill="#d4a853" d="M0 140V90h40V60h30v30h25V40h40v100h20V70h35V30h30v110h25V80h40V50h20V20h30v120h30V60h45v80h20V45h30V10h25v130h35V70h40V40h30v100h25V85h35V55h30v85h20V30h40v110h30V65h35V25h25v115h40V75h30V50h45v90h25V35h30v105h35V60h40v80h30V45h25v95h35V70h40v70h30V40h40v100z"/>
-  </svg>
-</section>
+<!-- HERO -->
+<header class="hero" id="home">
+  <svg class="hero-art" viewBox="0 0 600 220" preserveAspectRatio="none"><g fill="#5fe0b0">
+    <rect x="20" y="60" width="60" height="160"/><rect x="100" y="20" width="70" height="200"/><rect x="190" y="50" width="60" height="170"/>
+    <rect x="270" y="0" width="75" height="220"/><rect x="365" y="40" width="60" height="180"/><rect x="445" y="15" width="70" height="205"/><rect x="535" y="70" width="55" height="150"/></g></svg>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="tag">&#9679; RERA Approved &middot; P52100051200</div>
+      <h1>Godrej Emerald Waters.<br><em>The Jewel of Pimpri.</em></h1>
+      <p class="lead">1, 2, 3 &amp; 4 BHK premium residences on 7.3 acres, next to Sant Tukaram Metro Station. Peaceful green living with the whole city just minutes away.</p>
+      <div class="facts">
+        <span><b>1-4 BHK</b> Residences</span>
+        <span><b>7.3</b> Acres</span>
+        <span><b>2</b> Grand Clubhouses</span>
+        <span><b>50+</b> Amenities</span>
+        <span>Possession <b>Feb 2029</b></span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#" onclick="return act('brochure')">&#11015; Download Brochure</a>
+        <a class="btn btn-em" href="#" onclick="return act('costsheet')">&#11015; Get Cost Sheet</a>
+        <a class="btn btn-call" href="tel:+918857090799">&#128222; +91 88570 90799</a>
+      </div>
+    </div>
 
-<div class="filters">
-  <div class="search"><label>Search</label><input id="fSearch" placeholder="Project, developer or locality..."></div>
-  <div><label>City</label><select id="fCity"><option value="">All Cities</option></select></div>
-  <div><label>Configuration</label><select id="fBhk"><option value="">Any BHK</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
-  <div><label>Budget</label><select id="fBudget">
-    <option value="">Any Budget</option><option value="0-75">Under 75 L</option><option value="75-150">75 L - 1.5 Cr</option>
-    <option value="150-300">1.5 Cr - 3 Cr</option><option value="300-99999">3 Cr +</option></select></div>
-  <div><label>Status</label><select id="fStatus"><option value="">All</option><option>New Launch</option><option>Under Construction</option><option>Ready to Move</option></select></div>
-  <div><label>Sort By</label><select id="fSort">
-    <option value="pop">Popularity</option><option value="pa">Price: Low to High</option><option value="pd">Price: High to Low</option>
-    <option value="psf">Rate / sq.ft. (Low)</option><option value="area">Largest Area</option><option value="pos">Earliest Possession</option></select></div>
+    <div class="form-card" id="enquire">
+      <div class="ribbon">Exclusive Offers</div>
+      <h3>Get the Best Price &amp; Offers</h3>
+      <p>Price sheet, floor plans and live inventory, straight on WhatsApp.</p>
+      <input class="field" id="fName" placeholder="Your name">
+      <input class="field" id="fPhone" placeholder="10-digit mobile number" maxlength="10" inputmode="numeric">
+      <select class="field" id="fCfg">
+        <option>2 BHK - 914 sq.ft.</option><option>3 BHK - 1110 sq.ft.</option><option>4 BHK - 1800 sq.ft.</option><option>1 BHK - 525 sq.ft.</option><option>Jodi (combined) Unit</option>
+      </select>
+      <select class="field" id="fWhen">
+        <option>Planning to visit this week</option><option>Planning to visit this month</option><option>Just exploring for now</option>
+      </select>
+      <button class="btn btn-gold btn-block" onclick="leadSubmit('fName','fPhone','fCfg','fWhen')">Send on WhatsApp</button>
+      <div class="row2" style="margin-top:8px">
+        <a class="btn btn-call btn-sm" href="tel:+918857090799">&#128222; Call Now</a>
+        <a class="btn btn-wa btn-sm" href="#" onclick="return act('visit')">Book Site Visit</a>
+      </div>
+      <div class="tiny">Free pickup &amp; drop for site visits.</div>
+    </div>
+  </div>
+</header>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="wrap strip-in">
+    <div><b>7.3 Acres</b><span>Planned Landscape</span></div>
+    <div><b>1 Acre</b><span>Reserved Greens</span></div>
+    <div><b>Infinity</b><span>Pool</span></div>
+    <div><b>4-Lane</b><span>Grand Entry</span></div>
+    <div><b>0 min</b><span>Sant Tukaram Metro</span></div>
+  </div>
 </div>
 
-<main id="projects">
-  <div class="toolbar">
-    <h2 id="title">All Projects <small id="count"></small></h2>
-    <div class="chips" id="chips"></div>
+<!-- PRICE -->
+<section id="price">
+  <div class="wrap">
+    <div class="eyebrow">Price &amp; Configuration</div>
+    <h2 class="t">Exclusive pricing at Godrej Emerald Waters</h2>
+    <p class="sub">Homes for every family size. Tap any button for the detailed cost sheet, floor plan or live availability.</p>
+    <div class="prices" id="priceCards"></div>
+    <div class="jodi">
+      <div><b style="color:var(--gold2)">&#10024; Jodi options available</b><div style="color:var(--muted);font-size:13.5px">Combine two units into one large home. Limited jodi inventory.</div></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a class="btn btn-gold btn-sm" href="#" onclick="return act('jodi')">Check Jodi Options</a>
+        <a class="btn btn-call btn-sm" href="tel:+918857090799">&#128222; Call</a>
+      </div>
+    </div>
   </div>
-  <div class="grid" id="grid"></div>
-</main>
+</section>
 
-<footer id="contact">
-  &copy; 2026 EstateGrid. Demo listing website - all projects, prices and areas shown are sample data for illustration only.
+<!-- OVERVIEW -->
+<section id="overview" style="background:var(--panel)">
+  <div class="wrap ov">
+    <div>
+      <div class="eyebrow">Overview</div>
+      <h2 class="t">Wake up to serene greens in the heart of Pimpri</h2>
+      <p class="sub">Godrej Emerald Waters gives you space, comfort and elegance, with world-class amenities and everyday convenience just minutes away. It is a rare mix of peaceful living and city connectivity in PCMC.</p>
+      <ul>
+        <li>Thoughtfully designed 1, 2, 3 &amp; 4 BHK homes</li>
+        <li>7.3 acres with 1 acre of reserved greens</li>
+        <li>2 grand clubhouses &amp; 50+ premium amenities</li>
+        <li>Stunning infinity pool</li>
+        <li>4-lane entry, multi-level parking &amp; smart security</li>
+        <li>MahaRERA No. P52100051200 &middot; RERA possession Feb 2029</li>
+      </ul>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn btn-gold" href="#" onclick="return act('brochure')">&#11015; Download Brochure</a>
+        <a class="btn btn-ghost" href="#" onclick="return act('video')">&#9654; Watch Video Tour</a>
+        <a class="btn btn-ghost" href="#" onclick="return act('sample')">Visit Sample Flat</a>
+      </div>
+    </div>
+    <div class="ov-art">
+      <svg viewBox="0 0 500 360" preserveAspectRatio="xMidYMid slice">
+        <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1fa37a" stop-opacity=".45"/><stop offset="1" stop-color="#06110d"/></linearGradient></defs>
+        <rect width="500" height="360" fill="url(#sky)"/>
+        <circle cx="410" cy="70" r="30" fill="#f3d897" opacity=".5"/>
+        <g id="tw"></g>
+        <rect y="320" width="500" height="40" fill="#0e3a2b"/>
+        <path d="M0 330 Q125 315 250 330 T500 330 V360 H0z" fill="#1fa37a" opacity=".5"/>
+        <text x="20" y="348" fill="#cfe0d7" font-size="12" font-family="Segoe UI">Artistic impression</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section id="amenities">
+  <div class="wrap">
+    <div class="eyebrow">Amenities</div>
+    <h2 class="t">50+ lifestyle amenities</h2>
+    <p class="sub">Two grand clubhouses, an infinity pool and an acre of reserved greens, inside a secure gated community.</p>
+    <div class="amen" id="amen"></div>
+    <div style="text-align:center;margin-top:22px"><a class="btn btn-em" href="#" onclick="return act('amenities')">Get Full Amenities List</a></div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location" style="background:var(--panel)">
+  <div class="wrap">
+    <div class="eyebrow">Location Advantage</div>
+    <h2 class="t">Next to Sant Tukaram Metro Station</h2>
+    <p class="sub">Right on the Pimpri metro corridor, with quick access to ICC Tech Park, Mspace Mall and the Old Pune-Mumbai Highway.</p>
+    <div class="loc-grid">
+      <div class="dist">
+        <div>Sant Tukaram Nagar Metro Station<span>Next door</span></div>
+        <div>ICC Tech Park<span>Adjacent</span></div>
+        <div>Mspace Mall<span>Adjacent</span></div>
+        <div>Old Pune-Mumbai Highway<span>Minutes away</span></div>
+        <div>Hospitals, schools &amp; daily needs<span>Minutes away</span></div>
+        <div style="background:none;border:none;padding:4px 0;gap:8px;flex-wrap:wrap;justify-content:flex-start">
+          <a class="btn btn-gold btn-sm" href="https://maps.app.goo.gl/AzQa33FZgyY3tMHK8" target="_blank" rel="noopener">&#128205; Open in Google Maps</a>
+          <a class="btn btn-wa btn-sm" href="#" onclick="return act('location')">Get Location on WhatsApp</a>
+          <a class="btn btn-ghost btn-sm" href="#" onclick="return act('visit')">Book Site Visit</a>
+        </div>
+      </div>
+      <div class="map"><iframe loading="lazy" title="Godrej Emerald Waters location" src="https://maps.google.com/maps?q=Godrej%20Emerald%20Waters%20Pimpri%20Pune&z=15&output=embed"></iframe></div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOOR PLANS -->
+<section id="plans">
+  <div class="wrap">
+    <div class="eyebrow">Floor Plans</div>
+    <h2 class="t">Unit plans for every configuration</h2>
+    <p class="sub">Tap any plan to get the high-resolution floor plan on WhatsApp.</p>
+    <div class="fp" id="fp"></div>
+    <div style="text-align:center;margin-top:22px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-gold" href="#" onclick="return act('floor')">&#11015; Download All Floor Plans</a>
+      <a class="btn btn-ghost" href="#" onclick="return act('master')">&#11015; Master Plan</a>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD CENTRE -->
+<section id="downloads" style="background:var(--panel)">
+  <div class="wrap">
+    <div class="eyebrow">Download Centre</div>
+    <h2 class="t">Everything you need, on WhatsApp in 1 tap</h2>
+    <div class="dl" id="dl"></div>
+  </div>
+</section>
+
+<!-- EMI -->
+<section id="emi">
+  <div class="wrap">
+    <div class="eyebrow">EMI Calculator</div>
+    <h2 class="t">Plan your Godrej Emerald Waters home</h2>
+    <div class="emi-box">
+      <div>
+        <div class="chipsel" id="cfgSel"></div>
+        <div class="range"><label>Property Price <b id="ePv"></b></label><input type="range" id="eP" min="8000000" max="38000000" step="100000" value="14900000"></div>
+        <div class="range"><label>Down Payment <b id="eDv"></b></label><input type="range" id="eD" min="10" max="50" value="20"></div>
+        <div class="range"><label>Interest Rate <b id="eRv"></b></label><input type="range" id="eR" min="7" max="11" step="0.05" value="8.5"></div>
+        <div class="range"><label>Tenure <b id="eTv"></b></label><input type="range" id="eT" min="5" max="30" value="20"></div>
+      </div>
+      <div class="emi-out">
+        <div style="color:var(--muted);font-size:14px">Your estimated monthly EMI</div>
+        <div class="big" id="emiOut"></div>
+        <div style="color:var(--muted);font-size:13px" id="loanOut"></div>
+        <a class="btn btn-wa" href="#" onclick="return act('loan')">Check Loan Eligibility</a>
+        <a class="btn btn-ghost" href="#" onclick="return act('payment')">Get Payment Plan</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:var(--panel)">
+  <div class="wrap">
+    <div class="eyebrow">FAQ</div>
+    <h2 class="t">Godrej Emerald Waters - common questions</h2>
+    <div class="faq">
+      <details><summary>Where is Godrej Emerald Waters located?</summary><p>In Pimpri, Pune (PCMC), next to Sant Tukaram Metro Station, ICC Tech Park and Mspace Mall.</p></details>
+      <details><summary>What is the price of a 2 BHK in Godrej Emerald Waters?</summary><p>2 BHK (914 sq.ft. carpet) starts from &#8377; 1.49 Cr onwards. 1 BHK from &#8377; 92 L, 3 BHK from &#8377; 1.92 Cr and 4 BHK from &#8377; 2.96 Cr onwards. Ask on WhatsApp for the exact all-inclusive cost sheet.</p></details>
+      <details><summary>What is the possession date?</summary><p>RERA possession is February 2029.</p></details>
+      <details><summary>Is the project RERA registered?</summary><p>Yes. MahaRERA registration no. P52100051200. You can verify it on maharera.maharashtra.gov.in.</p></details>
+      <details><summary>What is the land area and what amenities are there?</summary><p>The project is spread across 7.3 acres with 2 grand clubhouses, 50+ lifestyle amenities, an infinity pool, 1 acre of reserved greens, 4-lane entry, multi-level parking and smart security.</p></details>
+      <details><summary>Are jodi (combined) units available?</summary><p>Yes, jodi options are available for buyers who want a bigger home. Inventory is limited. Ask us for the available combinations.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap">
+    <div class="eyebrow">Limited Inventory</div>
+    <h2 class="t">Book your dream home at Godrej Emerald Waters</h2>
+    <p class="sub" style="margin:auto">Get the latest price sheet, offers and a priority site visit slot today.</p>
+    <div class="cta">
+      <a class="btn btn-gold" href="#" onclick="return act('costsheet')">&#11015; Get Cost Sheet</a>
+      <a class="btn btn-em" href="#" onclick="return act('offer')">Unlock Exclusive Offer</a>
+      <a class="btn btn-wa" href="#" onclick="return act('visit')">Book Site Visit</a>
+      <a class="btn btn-call" href="tel:+918857090799">&#128222; Call +91 88570 90799</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div class="brand">
+        <div class="gem"><svg viewBox="0 0 24 24" fill="#03241a"><path d="M6 3h12l4 6-10 12L2 9z"/></svg></div>
+        <div><b>Godrej Emerald Waters</b><small>Pimpri &middot; Pune</small></div>
+      </div>
+      <div>
+        <p>Call / WhatsApp: <a href="tel:+918857090799" style="color:var(--gold2)">+91 88570 90799</a></p>
+        <p>MahaRERA Project Reg. No.: P52100051200</p>
+      </div>
+    </div>
+    <div class="disc">
+      <b>Disclaimer:</b> This is not the official website of Godrej Properties Ltd. It is managed by an authorised channel partner, PropBillion (MahaRERA Agent Reg. No. A52100058176), for marketing and information purposes only. All trademarks belong to their respective owners. Prices, areas, offers and possession dates are indicative, subject to change, and exclude stamp duty, registration, GST and other charges unless stated. Images are artistic impressions. Please verify all details with the developer and on maharera.maharashtra.gov.in before booking. By submitting your details or clicking any button you agree to be contacted on call / WhatsApp / SMS, even if your number is registered on DND.
+      <br><br>&copy; 2026 Godrej Emerald Waters - Pimpri.
+    </div>
+  </div>
 </footer>
 
-<div class="overlay" id="overlay" onclick="if(event.target===this)closeModal()">
-  <div class="modal" id="modal"></div>
+<!-- POPUP -->
+<div class="overlay" id="pop" onclick="if(event.target===this)closePop()">
+  <div class="modal">
+    <button class="x" onclick="closePop()">&times;</button>
+    <h3 id="popT">Get the Cost Sheet</h3>
+    <p id="popS">Enter your details and get the latest price sheet and offers on WhatsApp.</p>
+    <input class="field" id="pName" placeholder="Your name">
+    <input class="field" id="pPhone" placeholder="10-digit mobile number" maxlength="10" inputmode="numeric">
+    <select class="field" id="pCfg"><option>2 BHK - 914 sq.ft.</option><option>3 BHK - 1110 sq.ft.</option><option>4 BHK - 1800 sq.ft.</option><option>1 BHK - 525 sq.ft.</option><option>Jodi (combined) Unit</option></select>
+    <button class="btn btn-gold btn-block" onclick="leadSubmit('pName','pPhone','pCfg')">Send on WhatsApp</button>
+    <a class="btn btn-call btn-block" style="margin-top:8px" href="tel:+918857090799">&#128222; Or Call Now</a>
+  </div>
+</div>
+
+<a class="fab fab-call" href="tel:+918857090799" title="Call Now"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></a>
+<a class="fab fab-wa" href="#" onclick="return wa('I am interested in Godrej Emerald Waters, Pimpri. Please call me.')" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1 0-.3-.1-.5-.2z"/></svg></a>
+<div class="mbar">
+  <a href="tel:+918857090799" style="background:var(--blue);color:#fff">&#128222; Call Now</a>
+  <a href="#" onclick="return wa('I am interested in Godrej Emerald Waters, Pimpri. Please share details.')" style="background:var(--wa);color:#04340f">WhatsApp</a>
 </div>
 <div class="toast" id="toast"></div>
 
 <script>
-/* ---------- Seeded random so data stays the same on every load ---------- */
-let seed = 42;
-const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
-const pick = a => a[Math.floor(rnd() * a.length)];
-const between = (a, b) => Math.floor(a + rnd() * (b - a + 1));
+/* ===== Project data (edit here) ===== */
+const UNITS = [
+  {t:"1 BHK", c:525,  p:9200000,  pts:["Ideal for investors & couples","Strong rental demand near metro"]},
+  {t:"2 BHK", c:914,  p:14900000, pts:["Most popular choice","Spacious family layout"], hot:true},
+  {t:"3 BHK", c:1110, p:19200000, pts:["Large living & dining","Premium family home"]},
+  {t:"4 BHK", c:1800, p:29600000, pts:["Ultra-spacious residence","Limited units"]}
+];
 
-const CITIES = {
-  "Pune":      {areas:["Kharadi","Baner","Hinjewadi","Wakad","Viman Nagar","Balewadi","Wagholi","Hadapsar","Koregaon Park","Bavdhan"], rate:[7500,16500]},
-  "Mumbai":    {areas:["Powai","Thane West","Andheri East","Goregaon","Worli","Chembur","Mulund","Kandivali"], rate:[14000,42000]},
-  "Bengaluru": {areas:["Whitefield","Sarjapur Road","Hebbal","Electronic City","Yelahanka","HSR Layout","Devanahalli"], rate:[7000,15500]},
-  "Hyderabad": {areas:["Gachibowli","Kokapet","Kondapur","Tellapur","Narsingi","Financial District"], rate:[6800,13500]}
+/* ===== WhatsApp + Call: +91 8857090799 ===== */
+const WA = "918857090799";
+const P = "*Godrej Emerald Waters, Pimpri*";
+function wa(m){ window.open("https://wa.me/"+WA+"?text="+encodeURIComponent("Hi, "+m),"_blank"); return false; }
+const MSG = {
+  brochure:`please send me the official brochure of ${P}.`,
+  costsheet:`please share the all-inclusive cost sheet of ${P}.`,
+  inventory:`please share the live available inventory (floor / facing / view) of ${P}.`,
+  floor:`please send me all floor plans of ${P}.`,
+  master:`please share the master plan / site layout of ${P}.`,
+  payment:`please share the payment plan & booking amount for ${P}.`,
+  pricelist:`please share the latest price list of ${P}.`,
+  offer:`please share the current exclusive offers on ${P}.`,
+  bestprice:`I want the best possible price for ${P}.`,
+  visit:`I want to book a site visit (with pickup-drop) for ${P}.`,
+  sample:`I want to visit the sample flat at ${P}.`,
+  video:`please share the video walkthrough of ${P}.`,
+  loan:`I need home loan eligibility & assistance for ${P}.`,
+  rera:`please share the RERA certificate & approvals of ${P}.`,
+  spec:`please share the specifications of ${P}.`,
+  amenities:`please share the full amenities list of ${P}.`,
+  jodi:`please share the available jodi (combined) unit options at ${P}.`,
+  location:`please share the exact site location of ${P}.`,
+  nri:`I am an NRI and want to invest in ${P}. Please guide me.`,
+  callback:`please give me a callback for ${P}.`
 };
-const DEVS = ["Aurelia Developers","Skyline Habitat","Vertex Realty","Crestwood Homes","Meridian Group","Northstar Builders","Lumina Estates","Banyan Spaces","Orchid Infra","Paramount Living","Sterling Heights Co.","Zenith Constructions"];
-const N1 = ["Aria","Elysian","Serene","Grand","The Crown","Imperial","Verde","Solace","Horizon","Riviera","Altura","Opus","Celestia","Nirvana","Monarch","Azure","Trinity","Cascade"];
-const N2 = ["Residences","Towers","Heights","One","Park","Greens","Enclave","Bay","Square","Vista","Avenue","Gardens"];
-const AMEN = ["Clubhouse","Infinity Pool","Gymnasium","Jogging Track","Kids Play Area","Co-working Lounge","Mini Theatre","EV Charging","Sky Deck","Yoga Deck","Indoor Games","Pet Park","Party Lawn","24x7 Security","Tennis Court","Amphitheatre"];
-const OFFERS = ["Zero stamp duty for first 50 bookings","Pay 10% now, rest on possession","Free modular kitchen","Spot booking discount up to 3 L","No GST on select units","Assured rental for 2 years",""];
-const STATUS = ["New Launch","Under Construction","Ready to Move"];
-const PALETTES = [["#1e3a5f","#d4a853"],["#2d1b3d","#ff9f43"],["#0f3d3e","#3fb68b"],["#3b1f1f","#f0cf8a"],["#1a2a4a","#4c8dff"],["#2a2a2a","#e07a5f"],["#203a2b","#a8d5ba"]];
-
-const projects = [];
-for (let i = 0; i < 36; i++) {
-  const city = pick(Object.keys(CITIES));
-  const c = CITIES[city];
-  const status = pick(STATUS);
-  const rate = Math.round(between(c.rate[0], c.rate[1]) / 50) * 50;
-  const minB = between(1, 3), maxB = Math.min(5, minB + between(0, 2));
-  const units = [];
-  for (let b = minB; b <= maxB; b++) {
-    const base = {1:[420,560],2:[620,860],3:[980,1350],4:[1550,2100],5:[2300,3200]}[b];
-    const carpet = between(base[0], base[1]);
-    units.push({bhk:b, carpet, price: carpet * rate});
-  }
-  const year = status === "Ready to Move" ? 2026 : between(2027, 2031);
-  const month = status === "Ready to Move" ? "Ready" : pick(["Mar","Jun","Sep","Dec"]);
-  const amen = [...AMEN].sort(() => rnd() - .5).slice(0, 8);
-  projects.push({
-    id: i,
-    name: pick(N1) + " " + pick(N2),
-    dev: pick(DEVS),
-    city, area: pick(c.areas),
-    status, rate, units,
-    min: units[0].price, max: units[units.length-1].price,
-    minA: units[0].carpet, maxA: units[units.length-1].carpet,
-    acres: (between(15, 120) / 10).toFixed(1),
-    towers: between(2, 12), floors: between(14, 48),
-    total: between(180, 1400),
-    poss: month === "Ready" ? "Ready" : `${month} ${year}`,
-    possSort: month === "Ready" ? 0 : year * 12 + ["Mar","Jun","Sep","Dec"].indexOf(month) * 3,
-    amen, offer: pick(OFFERS),
-    pal: pick(PALETTES),
-    pop: between(50, 999),
-    rera: "P5" + between(1000000000, 9999999999)
-  });
+function act(k){ return wa(MSG[k] || MSG.callback); }
+function unitAct(i,k){
+  const u = UNITS[i], label = `${u.t} (${u.c} sq.ft.)`;
+  const m = {
+    cost:`please share the cost sheet for the ${label} in ${P}.`,
+    plan:`please send me the floor plan of the ${label} in ${P}.`,
+    avail:`please share the available units for ${label} in ${P}.`,
+    visit:`I want a site visit for the ${label} in ${P}.`,
+    price:`please share the best price for the ${label} in ${P}.`
+  }[k];
+  return wa(m);
 }
 
-/* ---------- Helpers ---------- */
-const inr = v => v >= 1e7 ? (v/1e7).toFixed(2).replace(/\.00$/,"") + " Cr" : (v/1e5).toFixed(0) + " L";
-const num = v => v.toLocaleString("en-IN");
-const bhkText = p => { const b = p.units.map(u => u.bhk); return b.length > 1 ? `${b[0]}-${b[b.length-1]} BHK` : `${b[0]} BHK`; };
-const badgeClass = s => s === "New Launch" ? "b-new" : s === "Ready to Move" ? "b-rtm" : "b-uc";
-let shortlist = new Set();
-try { shortlist = new Set(JSON.parse(localStorage.getItem("eg_sl") || "[]")); } catch(e) {}
-let showShortlist = false, quickChip = "";
-
-/* Building illustration per project (no external images) */
-function art(p, h = 190) {
-  const [bg, ac] = p.pal; let s = 7 + p.id * 13, r = () => (s = (s * 9301 + 49297) % 233280) / 233280;
-  let towers = "";
-  const n = Math.min(p.towers, 6), w = 400 / (n + 1);
-  for (let t = 0; t < n; t++) {
-    const th = 80 + r() * (h - 60), x = 20 + t * w + r() * 10, tw = w * .7;
-    towers += `<rect x="${x}" y="${h - th}" width="${tw}" height="${th}" fill="${bg}" stroke="${ac}" stroke-opacity=".5"/>`;
-    for (let y = h - th + 8; y < h - 10; y += 12)
-      for (let xx = x + 6; xx < x + tw - 6; xx += 10)
-        if (r() > .45) towers += `<rect x="${xx}" y="${y}" width="5" height="6" fill="${ac}" opacity="${.3 + r() * .7}"/>`;
-  }
-  return `<svg viewBox="0 0 440 ${h}" preserveAspectRatio="xMidYMid slice">
-    <defs><linearGradient id="g${p.id}${h}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${ac}" stop-opacity=".35"/><stop offset="1" stop-color="#0d1117"/></linearGradient></defs>
-    <rect width="440" height="${h}" fill="url(#g${p.id}${h})"/>
-    <circle cx="${340 - p.id * 3}" cy="45" r="22" fill="${ac}" opacity=".5"/>${towers}
-    <rect y="${h - 8}" width="440" height="8" fill="#0d1117"/></svg>`;
+/* ===== Helpers ===== */
+const inr = v => v>=1e7 ? "&#8377; "+(v/1e7).toFixed(2).replace(/0$/,"").replace(/\.0$/,"")+" Cr" : "&#8377; "+Math.round(v/1e5)+" L";
+function toast(m,err){const t=document.getElementById("toast");t.textContent=m;t.style.background=err?"#d64545":"var(--wa)";t.style.color=err?"#fff":"#04340f";t.classList.add("show");setTimeout(()=>t.classList.remove("show"),3000);}
+function leadSubmit(n,ph,cfg,when){
+  const name=document.getElementById(n).value.trim(), phone=document.getElementById(ph).value.trim();
+  if(!name||!/^[6-9]\d{9}$/.test(phone)) return toast("Please enter your name and a valid 10-digit mobile",1);
+  let m=`I am interested in ${P}.\nName: ${name}\nMobile: ${phone}\nLooking for: ${document.getElementById(cfg).value}`;
+  if(when) m+=`\nTimeline: ${document.getElementById(when).value}`;
+  wa(m+"\nPlease share the cost sheet & offers."); closePop(); toast(`Thanks ${name.split(" ")[0]}! Opening WhatsApp...`);
 }
 
-/* ---------- Render ---------- */
-function filtered() {
-  const q = fSearch.value.toLowerCase().trim();
-  const [lo, hi] = (fBudget.value || "0-99999").split("-").map(x => +x * 1e5);
-  let list = projects.filter(p =>
-    (!showShortlist || shortlist.has(p.id)) &&
-    (!q || (p.name + p.dev + p.area + p.city).toLowerCase().includes(q)) &&
-    (!fCity.value || p.city === fCity.value) &&
-    (!fBhk.value || p.units.some(u => u.bhk == fBhk.value)) &&
-    (!fStatus.value || p.status === fStatus.value) &&
-    (p.max >= lo && p.min <= hi) &&
-    (!quickChip || p.area === quickChip)
-  );
-  const s = fSort.value;
-  const by = {pop:(a,b)=>b.pop-a.pop, pa:(a,b)=>a.min-b.min, pd:(a,b)=>b.max-a.max, psf:(a,b)=>a.rate-b.rate, area:(a,b)=>b.maxA-a.maxA, pos:(a,b)=>a.possSort-b.possSort}[s];
-  return list.sort(by);
-}
+/* ===== Price cards ===== */
+priceCards.innerHTML = UNITS.map((u,i)=>`
+  <div class="pc ${u.hot?"hot":""}">${u.hot?'<span class="hotb">MOST POPULAR</span>':""}
+    <h3>${u.t}</h3><div class="area">${u.c.toLocaleString("en-IN")} sq.ft. carpet</div>
+    <div class="amt">${inr(u.p)} <small>onwards*</small></div>
+    <ul>${u.pts.map(x=>`<li>&#10003; ${x}</li>`).join("")}</ul>
+    <div class="acts">
+      <a class="btn btn-gold btn-sm full" href="#" onclick="return unitAct(${i},'cost')">&#11015; Get Cost Sheet</a>
+      <a class="btn btn-ghost btn-sm" href="#" onclick="return unitAct(${i},'plan')">Floor Plan</a>
+      <a class="btn btn-ghost btn-sm" href="#" onclick="return unitAct(${i},'avail')">Availability</a>
+      <a class="btn btn-ghost btn-sm" href="#" onclick="return unitAct(${i},'price')">Best Price</a>
+      <a class="btn btn-wa btn-sm" href="#" onclick="return unitAct(${i},'visit')">Site Visit</a>
+      <a class="btn btn-call btn-sm full" href="tel:+918857090799">&#128222; Call Now</a>
+    </div>
+  </div>`).join("");
 
-function render() {
-  const list = filtered();
-  count.textContent = `(${list.length} found)`;
-  title.firstChild.textContent = showShortlist ? "Your Shortlist " : "All Projects ";
-  grid.innerHTML = list.length ? list.map(p => `
-    <div class="card">
-      <div class="thumb">${art(p)}
-        <span class="badge ${badgeClass(p.status)}">${p.status}</span>
-        <button class="heart ${shortlist.has(p.id) ? "on" : ""}" onclick="toggleSL(${p.id})">&#9829;</button>
-        ${p.offer ? `<div class="offer">&#9733; ${p.offer}</div>` : ""}
-      </div>
-      <div class="body">
-        <div class="dev">${p.dev}</div>
-        <div class="name">${p.name}</div>
-        <div class="loc">&#128205; ${p.area}, ${p.city}</div>
-        <div class="price">&#8377; ${inr(p.min)}${p.max > p.min ? " - " + inr(p.max) : ""} <small>onwards</small></div>
-        <div class="loc">&#8377; ${num(p.rate)} / sq.ft. (carpet)</div>
-        <div class="specs">
-          <div><b>${bhkText(p)}</b><span>Config</span></div>
-          <div><b>${num(p.minA)}${p.maxA > p.minA ? "-" + num(p.maxA) : ""}</b><span>Carpet sq.ft.</span></div>
-          <div><b>${p.poss}</b><span>Possession</span></div>
-        </div>
-        <div class="tags">${p.amen.slice(0,4).map(a => `<span>${a}</span>`).join("")}<span>+${p.amen.length - 4} more</span></div>
-        <div class="actions">
-          <button class="btn" onclick="openModal(${p.id})">View Details</button>
-          <button class="btn btn-gold" onclick="openModal(${p.id}, true)">Enquire</button>
-        </div>
-      </div>
-    </div>`).join("")
-  : `<div class="empty"><h3>No projects match these filters</h3><p>Try widening budget or clearing filters.</p></div>`;
-}
+/* ===== Amenities ===== */
+const AM = [["&#127946;","Infinity Pool"],["&#127963;","2 Grand Clubhouses"],["&#127795;","1 Acre Reserved Greens"],["&#128170;","Gymnasium"],
+  ["&#127939;","Jogging Track"],["&#129528;","Kids Play Area"],["&#127934;","Sports Courts"],["&#129496;","Yoga Deck"],
+  ["&#128663;","Multi-level Parking"],["&#128678;","4-Lane Grand Entry"],["&#128274;","Smart Security"],["&#10024;","50+ Amenities"]];
+amen.innerHTML = AM.map(a=>`<div class="am"><i>${a[0]}</i><b>${a[1]}</b></div>`).join("");
 
-function renderChips() {
-  const top = {}; projects.forEach(p => top[p.area] = (top[p.area] || 0) + 1);
-  const areas = Object.entries(top).sort((a,b) => b[1]-a[1]).slice(0, 6).map(x => x[0]);
-  chips.innerHTML = [`<button class="chip ${!quickChip ? "active" : ""}" onclick="setChip('')">All</button>`]
-    .concat(areas.map(a => `<button class="chip ${quickChip === a ? "active" : ""}" onclick="setChip('${a}')">${a}</button>`)).join("");
-}
-function setChip(a) { quickChip = a; renderChips(); render(); }
+/* ===== Floor plan cards ===== */
+const plan = `<svg viewBox="0 0 100 80" fill="none" stroke="#5fe0b0" stroke-width="1.5"><rect x="5" y="5" width="90" height="70"/><path d="M5 40h40V5M45 40v35M45 55h50M70 5v35M70 40h25"/></svg>`;
+fp.innerHTML = UNITS.map((u,i)=>`<div class="fpc"><div class="img">${plan}<div class="lock"><a class="btn btn-gold" href="#" onclick="return unitAct(${i},'plan')">&#128274; Unlock Plan</a></div></div>
+  <div class="meta"><b>${u.t}</b><span>${u.c.toLocaleString("en-IN")} sq.ft.</span></div></div>`).join("");
 
-function toggleSL(id) {
-  shortlist.has(id) ? shortlist.delete(id) : shortlist.add(id);
-  try { localStorage.setItem("eg_sl", JSON.stringify([...shortlist])); } catch(e) {}
-  slCount.textContent = shortlist.size; render();
-}
-function toggleShortlistView() { showShortlist = !showShortlist; render(); projectsEl.scrollIntoView({behavior:"smooth"}); }
+/* ===== Download centre ===== */
+const DL = [["brochure","&#128216;","Brochure","Official project brochure"],["costsheet","&#129534;","Cost Sheet","All-inclusive breakup"],
+  ["inventory","&#128203;","Live Inventory","Floor, facing & view"],["pricelist","&#128176;","Price List","Latest unit-wise prices"],
+  ["floor","&#128208;","Floor Plans","1, 2, 3 & 4 BHK plans"],["master","&#128506;","Master Plan","Site layout & towers"],
+  ["payment","&#128197;","Payment Plan","Booking & schedule"],["spec","&#128295;","Specifications","Fittings & finishes"],
+  ["rera","&#9989;","RERA Certificate","P52100051200"],["video","&#127909;","Video Walkthrough","Project & sample flat"],
+  ["jodi","&#127968;","Jodi Options","Combined bigger homes"],["offer","&#127873;","Exclusive Offers","Current deals"],
+  ["loan","&#127974;","Home Loan Help","Eligibility & tie-ups"],["visit","&#128663;","Site Visit","Free pickup & drop"],
+  ["nri","&#9992;","NRI Desk","Invest from abroad"],["callback","&#128222;","Request Callback","We'll call you"]];
+dl.innerHTML = DL.map(d=>`<a href="#" onclick="return act('${d[0]}')"><i>${d[1]}</i><div><b>${d[2]}</b><small>${d[3]}</small></div></a>`).join("");
 
-/* ---------- Modal ---------- */
-let cur = null;
-function openModal(id, focusForm) {
-  const p = cur = projects[id];
-  modal.innerHTML = `
-    <button class="close" onclick="closeModal()">&times;</button>
-    <div class="m-hero">${art(p, 260)}</div>
-    <div class="m-body">
-      <div class="dev">${p.dev} &middot; RERA ${p.rera}</div>
-      <h2 style="font-size:28px">${p.name}</h2>
-      <div class="loc">&#128205; ${p.area}, ${p.city} &nbsp;|&nbsp; ${p.acres} acres &middot; ${p.towers} towers &middot; G+${p.floors} &middot; ${num(p.total)} units</div>
-      <div class="price">&#8377; ${inr(p.min)} - ${inr(p.max)} <small>&middot; ${p.status} &middot; Possession: ${p.poss}</small></div>
+/* ===== Overview illustration ===== */
+(function(){let s=7,r=()=>(s=(s*9301+49297)%233280)/233280,g="";
+  for(let k=0;k<7;k++){const h=150+r()*140,x=18+k*68,w=52;
+    g+=`<rect x="${x}" y="${320-h}" width="${w}" height="${h}" fill="#0b2a20" stroke="#5fe0b0" stroke-opacity=".5"/>`;
+    for(let y=330-h;y<312;y+=11)for(let xx=x+6;xx<x+w-6;xx+=10)if(r()>.45)g+=`<rect x="${xx}" y="${y}" width="5" height="6" fill="#f3d897" opacity="${.25+r()*.7}"/>`;}
+  document.getElementById("tw").innerHTML=g;})();
 
-      <div class="box" style="margin-top:18px">
-        <h4>Unit Configuration & Pricing</h4>
-        <table><tr><th>Type</th><th>Carpet Area</th><th>Rate / sq.ft.</th><th>All-in Price*</th></tr>
-        ${p.units.map(u => `<tr><td><b>${u.bhk} BHK</b></td><td>${num(u.carpet)} sq.ft.</td><td>&#8377; ${num(p.rate)}</td><td><b style="color:var(--gold)">&#8377; ${inr(u.price)}</b></td></tr>`).join("")}
-        </table>
-        <p style="font-size:11px;color:var(--muted);margin-top:8px">*Indicative price, excludes stamp duty, registration and GST.</p>
-      </div>
+/* ===== EMI ===== */
+cfgSel.innerHTML = UNITS.map((u,i)=>`<button class="${u.hot?"on":""}" onclick="pickCfg(${i},this)">${u.t}</button>`).join("");
+function pickCfg(i,b){ eP.value=UNITS[i].p; [...cfgSel.children].forEach(x=>x.classList.remove("on")); b.classList.add("on"); calc(); }
+function calc(){
+  const Pp=+eP.value,d=+eD.value,r=+eR.value/1200,n=+eT.value*12,L=Pp*(1-d/100),e=L*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+  ePv.innerHTML=inr(Pp); eDv.textContent=d+"%"; eRv.textContent=(+eR.value).toFixed(2)+"%"; eTv.textContent=eT.value+" yrs";
+  emiOut.textContent="₹ "+Math.round(e).toLocaleString("en-IN"); loanOut.innerHTML="Loan amount: "+inr(L)+" &middot; Down payment: "+inr(Pp-L);
+}
+["eP","eD","eR","eT"].forEach(i=>document.getElementById(i).addEventListener("input",calc)); calc();
 
-      <div class="m-grid">
-        <div class="box">
-          <h4>EMI Calculator</h4>
-          <div class="range"><label>Property Price <b id="ePv"></b></label><input type="range" id="eP" min="${p.min}" max="${p.max * 1.2}" step="100000" value="${p.min}"></div>
-          <div class="range"><label>Down Payment <b id="eDv"></b></label><input type="range" id="eD" min="10" max="50" value="20"></div>
-          <div class="range"><label>Interest Rate <b id="eRv"></b></label><input type="range" id="eR" min="7" max="11" step="0.05" value="8.5"></div>
-          <div class="range"><label>Tenure <b id="eTv"></b></label><input type="range" id="eT" min="5" max="30" value="20"></div>
-          <div style="font-size:13px;color:var(--muted)">Monthly EMI</div>
-          <div class="emi" id="emi"></div>
-        </div>
-        <div>
-          <div class="box" style="margin-bottom:16px"><h4>Amenities</h4>
-            <div class="amen">${p.amen.map(a => `<div>&#10003; ${a}</div>`).join("")}</div>
-          </div>
-          <div class="box form" id="enqBox"><h4>Book a Site Visit</h4>
-            <input id="nName" placeholder="Full name"><input id="nPhone" placeholder="Mobile number" maxlength="10">
-            <button class="btn btn-gold" style="width:100%" onclick="submitLead()">Get Price Sheet & Callback</button>
-          </div>
-        </div>
-      </div>
-    </div>`;
-  overlay.classList.add("show");
-  document.body.style.overflow = "hidden";
-  ["eP","eD","eR","eT"].forEach(id => document.getElementById(id).oninput = calcEmi);
-  calcEmi();
-  if (focusForm) setTimeout(() => { enqBox.scrollIntoView({behavior:"smooth"}); nName.focus(); }, 150);
-}
-function calcEmi() {
-  const P = +eP.value, d = +eD.value, r = +eR.value / 1200, n = +eT.value * 12;
-  const L = P * (1 - d / 100), e = L * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
-  ePv.textContent = "₹ " + inr(P); eDv.textContent = d + "%"; eRv.textContent = (+eR.value).toFixed(2) + "%"; eTv.textContent = eT.value + " yrs";
-  emi.textContent = "₹ " + num(Math.round(e));
-}
-function closeModal() { overlay.classList.remove("show"); document.body.style.overflow = ""; }
-function submitLead() {
-  if (!nName.value.trim() || !/^[6-9]\d{9}$/.test(nPhone.value)) return toast("Enter a valid name and 10-digit mobile", "#e05555");
-  closeModal(); toast(`Thanks ${nName.value.split(" ")[0]}! We'll call you about ${cur.name}.`);
-}
-function toast(msg, color) {
-  const t = document.getElementById("toast"); t.textContent = msg; t.style.background = color || "var(--green)";
-  t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 3000);
-}
-
-/* ---------- Init ---------- */
-const projectsEl = document.getElementById("projects");
-Object.keys(CITIES).forEach(c => fCity.innerHTML += `<option>${c}</option>`);
-[fSearch, fCity, fBhk, fBudget, fStatus, fSort].forEach(el => el.addEventListener("input", render));
-document.addEventListener("keydown", e => e.key === "Escape" && closeModal());
-stProj.textContent = projects.length;
-stDev.textContent = new Set(projects.map(p => p.dev)).size;
-slCount.textContent = shortlist.size;
-renderChips(); render();
+/* ===== Popup (auto after 20s, once per visit) ===== */
+function openPop(t,s){ if(t){popT.textContent=t;popS.textContent=s;} pop.classList.add("show"); }
+function closePop(){ pop.classList.remove("show"); }
+let popped=false; try{popped=sessionStorage.getItem("gew_pop")==="1";}catch(e){}
+if(!popped) setTimeout(()=>{ if(!pop.classList.contains("show")){ openPop("Exclusive offer on Godrej Emerald Waters","Get the latest cost sheet and offers on WhatsApp before prices change."); try{sessionStorage.setItem("gew_pop","1");}catch(e){} } },20000);
+document.addEventListener("keydown",e=>e.key==="Escape"&&closePop());
 </script>
 </body>
 </html>
